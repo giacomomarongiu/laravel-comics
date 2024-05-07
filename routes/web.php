@@ -16,9 +16,22 @@ Route::get('/', function () {
 
     $products = config('mydb.products');
 
+    $productsCollection = collect($products);
+
+    $comicBooks = $productsCollection->filter(fn($product) => $product['type'] == 'comic book');
+    //dd($movies);
+    $graphicNovelS = $productsCollection->filter(fn($product) => $product['type'] == 'graphic novel');
+
     //dd($products);
 
-    return view('welcome', compact('products'));
+    $data = [
+        'products' => [
+            'Graphic Novels' => $graphicNovelS,
+            'Comic Books' => $comicBooks,
+        ]
+    ];
+
+    return view('welcome', $data);
 })->name('welcome');
 
 
