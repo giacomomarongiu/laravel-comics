@@ -12,12 +12,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', function () {
 
-Route::view('/', 'welcome');
+    $products = config('mydb.products');
 
-/* Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
- */
+    //dd($products);
 
-require __DIR__.'/auth.php';
+    return view('welcome', compact('products'));
+})->name('welcome');
+
+
