@@ -1,1 +1,11 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+
+.container_jumbo {
+    height: 300px;
+    overflow: hidden;
+    img {
+        object-fit: contain;
+        width: 100%;
+    }
+}
