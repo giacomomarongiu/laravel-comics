@@ -31,7 +31,6 @@
 
         @include('partials.footer')
 
-
     </div>
 
 </body>

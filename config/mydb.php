@@ -110,6 +110,9 @@ return [
             "sale_date" => "2019-04-10",
             "type" => "graphic novel",
         ]
-    ]
+        ],
+        "icons" => [
+            "resources/img/footer-facebook.png","resources/img/footer-periscope.png","resources/img/footer-pinterest.png","resources/img/footer-twitter.png","resources/img/footer-youtube.png"
+        ],
 ];
 

@@ -29,7 +29,10 @@
                 <div class="container w-75 d-flex justify-content-between align-items-center h-100">
                     <button class="btn btn-primary">Click</button>
                     <div class="logos">
-                        <img src="{{ Vite::asset('resources/img/footer-facebook.png') }}" alt="">
+                        <!--ICons printed dinamically-->
+                        @foreach ($icons as $icon)
+                            <img src="{{ Vite::asset($icon) }}" alt="">
+                        @endforeach
                     </div>
                 </div>
             </div>

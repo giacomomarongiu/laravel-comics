@@ -8,11 +8,16 @@
                     {{ $key }}.
                 </h2>
 
-                <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="row g-4">
                     @foreach ($productsType as $product)
-                        <div class="col ">
+                        <div class="col-6">
                             <div class="card border-0 h-100 m-auto">
-                                <img class="h-25" src="{{ $product['thumb'] }}" class="card-img-top" alt="...">
+                                <img class="" src="{{ $product['thumb'] }}" class="card-img-top" alt="...">
+
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card border-0 h-100 m-auto">
                                 <div class="card-body h-100 d-flex flex-column justify-content-between">
                                     <h5 class="card-title fw-bold"> {{ $product['title'] }}</h5>
                                     <h6 class="m-0 p-0">Descrizione:</h6>

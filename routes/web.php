@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 
     $products = config('mydb.products');
-
+    $icons = config('mydb.icons');
+    //dd($icons);
     $productsCollection = collect($products);
 
     $comicBooks = $productsCollection->filter(fn($product) => $product['type'] == 'comic book');
@@ -26,12 +27,35 @@ Route::get('/', function () {
 
     $data = [
         'products' => [
-            'Graphic Novels' => $graphicNovelS,
             'Comic Books' => $comicBooks,
-        ]
+            'Graphic Novels' => $graphicNovelS,
+        ],
+        'icons'=> $icons,
     ];
 
     return view('welcome', $data);
 })->name('welcome');
 
+Route::get('/comics', function () {
+
+    $products = config('mydb.products');
+    $icons = config('mydb.icons');
+    //dd($icons);
+    $productsCollection = collect($products);
+
+    $comicBooks = $productsCollection->filter(fn($product) => $product['type'] == 'comic book');
+    //dd($movies);
+    $graphicNovelS = $productsCollection->filter(fn($product) => $product['type'] == 'graphic novel');
+
+    //dd($products);
+
+    $data = [
+        'products' => [
+            'Comic Books' => $comicBooks,
+        ],
+        'icons' => $icons,
+    ];
+
+    return view('comics', $data);
+})->name('comics');
 
