@@ -22,12 +22,18 @@
 <body>
     <div id="app">
 
-    @include('partials.header')
+        @include('partials.header')
         @include('partials.jumbo')
+
         <main class="">
             @yield('content')
         </main>
+
+        @include('partials.footer')
+
+
     </div>
+
 </body>
 
 </html>
