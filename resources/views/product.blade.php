@@ -19,6 +19,12 @@
                         <h5 class="card-title fw-bold"> {{ $product['title'] }}</h5>
                         <h6 class="m-0 p-0">Descrizione:</h6>
                         <p class=" card-text h-75 overflow-y-auto">{{ $product['description'] }}</p>
+                        <ul class="list-group list-group-flush fw-bold">
+                            <li class="list-group-item ">Serie: <span class="text-primary">{{ $product['series'] }}</span>
+                            </li>
+                            <li class="list-group-item">Price: {{ $product['price'] }}</li>
+                            <li class="list-group-item">Sale until: {{ $product['sale_date'] }}</li>
+                        </ul>
                         <a href="#" class="btn btn-primary mb-0">BUY NOW</a>
                     </div>
                 </div>
