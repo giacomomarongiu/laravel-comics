@@ -2,28 +2,24 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+// Home/Welcome Route
 Route::get('/', function () {
 
+    // get some data from my db
     $products = config('mydb.products');
     $icons = config('mydb.icons');
-    //dd($icons);
+    // let's see it
+    // dd($icons);
+    // dd($products);
+
+    //helper function that creates a collection instance from the given array
     $productsCollection = collect($products);
 
+    //i can utilize various collection methods
+    //in this case i'm using filter
     $comicBooks = $productsCollection->filter(fn($product) => $product['type'] == 'comic book');
-    //dd($movies);
     $graphicNovelS = $productsCollection->filter(fn($product) => $product['type'] == 'graphic novel');
 
-    //dd($products);
 
     $data = [
         'products' => [
@@ -36,18 +32,15 @@ Route::get('/', function () {
     return view('welcome', $data);
 })->name('welcome');
 
+
+
 Route::get('/comics', function () {
 
     $products = config('mydb.products');
     $icons = config('mydb.icons');
-    //dd($icons);
     $productsCollection = collect($products);
 
     $comicBooks = $productsCollection->filter(fn($product) => $product['type'] == 'comic book');
-    //dd($movies);
-    $graphicNovelS = $productsCollection->filter(fn($product) => $product['type'] == 'graphic novel');
-
-    //dd($products);
 
     $data = [
         'products' => [

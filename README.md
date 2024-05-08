@@ -11,3 +11,7 @@ Concentratevi sul layout:
 
 # Bonus:
 Create più pagine che estendono lo stesso layout
+
+# Day 2 
+Proseguite con l'esercizio DC comics nella stessa repo laravel-comics ed implementate la rotta per visualizzare il singolo
+fumetto come visto in classe stamattina. Ricordate di gestire prima il caso base e solo se tutto funziona provate, sperimentate.

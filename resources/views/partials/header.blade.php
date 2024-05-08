@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary ">
         <div class="container w-75">
             <a href="{{ route('welcome') }}"> <img class="m-auto" src="{{ Vite::asset('resources/img/dc-logo.png') }}"
                     alt=""></a>
