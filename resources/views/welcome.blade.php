@@ -14,7 +14,7 @@
                             <img class="h-75" src="{{ $product['thumb'] }}" class="card-img-top" alt="...">
                             <div class="card-body d-flex flex-column justify-content-between">
                                 <h5 class="card-title fw-bold"> {{ $product['title'] }}</h5>
-                                <a href="{{ route('product', ['id' => $index]) }}" class="btn btn-primary mb-0">MORE
+                                <a href="{{ route('product', ['page' => Route::currentRouteName(),'id' => $index]) }}" class="btn btn-primary mb-0">MORE
                                     INFO</a>
                             </div>
                         </div>

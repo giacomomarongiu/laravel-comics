@@ -67,7 +67,7 @@ Route::get('/collectibles', function () {
     //i can utilize various collection methods
     //in this case i'm using filter
     $graphicNovels = $productsCollection->filter(fn($product) => $product['type'] == 'graphic novel');
-
+    //dd($graphicNovels);
     $data = [
         'products' => [
             'Graphic Novels' => $graphicNovels,
@@ -79,19 +79,16 @@ Route::get('/collectibles', function () {
 })->name('collectibles');
 
 
-//Sigle comic Route
-Route::get('/comics/{id}', function ($id) {
+//Sigle Route
+//Passing dinamically my route i can use the same view "product" for all the router with info buttons
+Route::get('/{page}/{id}', function ($category,$id) {
 
     $products = config('mydb.products');
     $icons = config('mydb.icons');
 
-    /*     $productsCollection = collect($products);
-        $comicBooks = $productsCollection->filter(fn($product) => $product['type'] == 'comic book');
-        $graphicNovels = $productsCollection->filter(fn($product) => $product['type'] == 'graphic novel');
-     */
-
      //404 if is not correct
     abort_unless($id >= 0 && $id < count($products), 404);
+    //product assignment
     $product= $products[$id];
     //dd($product);
 
