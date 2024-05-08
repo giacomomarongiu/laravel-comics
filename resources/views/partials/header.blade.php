@@ -7,24 +7,13 @@
 
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">CHARACTERS</a>
-                    </li>
                     <li class="nav-item ">
                         <a class="nav-link  {{ Route::currentRouteName() === 'comics' ? 'active' : '' }}"
                             href="{{ route('comics') }}">COMICS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">MOVIES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">TV</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">GAMES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">COLLECTIBLES</a>
+                        <a class="nav-link {{ Route::currentRouteName() === 'collectibles' ? 'active' : '' }}"
+                            href="{{ route('collectibles') }}">COLLECTIBLES</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">VIDEOS</a>

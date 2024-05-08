@@ -50,6 +50,35 @@ Route::get('/comics', function () {
 })->name('comics');
 
 
+//All Novels route 
+Route::get('/collectibles', function () {
+
+    // get some data from my db
+    $products = config('mydb.products');
+    $icons = config('mydb.icons');
+    // let's see it
+    // dd($icons);
+    // dd($products);
+
+    //helper function that creates a collection instance from the given array
+    $productsCollection = collect($products);
+    //dd($productsCollection);
+
+    //i can utilize various collection methods
+    //in this case i'm using filter
+    $graphicNovels = $productsCollection->filter(fn($product) => $product['type'] == 'graphic novel');
+
+    $data = [
+        'products' => [
+            'Graphic Novels' => $graphicNovels,
+        ],
+        'icons' => $icons,
+    ];
+
+    return view('collectibles', $data);
+})->name('collectibles');
+
+
 //Sigle comic Route
 Route::get('/comics/{id}', function ($id) {
 
